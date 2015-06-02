@@ -2,10 +2,11 @@ class Vehicle
 
   @@vehicles = []
 
-  define_method(:initialize) do |make, model, year|
+  define_method(:initialize) do |make, model, year,|
     @make = make
     @model = model
     @year = year
+    @id = @@vehicles.length.+(1)
   end
 
   define_method(:make) do
@@ -20,6 +21,10 @@ class Vehicle
     @year
   end
 
+  define_method(:id) do
+    @id
+  end
+
   define_singleton_method(:all) do
     @@vehicles
   end
@@ -30,6 +35,16 @@ class Vehicle
 
   define_singleton_method(:clear) do
     @@vehicles = []
+  end
+
+  define_singleton_method(:find) do |id|
+    found_vehicle = nil
+    @@vehicles.each do |vehicle|
+      if vehicle.id.eql?(id.to_i)
+        found_vehicle = vehicle
+      end
+    end
+    found_vehicle
   end
 
   define_method(:age) do
