@@ -2,8 +2,10 @@ require('rspec')
 require('pry')
 require('place')
 
-
-
+describe(Place) do
+  before do
+    Place.clear
+  end
 
 describe('#place') do
   it('tells the name of a place Ive been') do
@@ -21,5 +23,13 @@ describe('#save') do
     test_city = Place.new('NYC')
     test_city.save
     expect(Place.all).to(eq([test_city]))
+  end
+end
+describe('.clear') do
+  it('clears out alal of the saved places') do
+    Place.new('NYC').save
+    Place.clear
+    expect(Place.all).to(eq([]))
+    end
   end
 end
