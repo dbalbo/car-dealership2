@@ -3,9 +3,9 @@ class Vehicle
   @@vehicles = []
 
   define_method(:initialize) do |make, model, year,|
-    @make = make
-    @model = model
-    @year = year
+    @make = make.capitalize
+    @model = model.capitalize
+    @year = year.capitalize
     @id = @@vehicles.length.+(1)
   end
 
