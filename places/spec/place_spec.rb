@@ -11,3 +11,8 @@ describe('#place') do
     expect(test_city.place).to(eq('Seattle'))
   end
 end
+describe('.all') do
+  it('is empty at first') do
+    expect(Place.all).to(eq([]))
+  end
+end
