@@ -1,0 +1,21 @@
+<div class='jumbotron'>
+  <h1>Hey! Look At the Places I've Been!<br>
+    <br> LOOK. AT. THEM!<h1>
+</div>
+
+
+<div>
+  <ul>
+    <% @places.each do |place| %>
+    <li><%= place.description %></li>
+    <% end %>
+  </ul>
+</div>
+
+<form action='/places' method='post'>
+  <div class='form-group'>
+    <label for='description'>New Place</label>
+    <input id ='description' name='description' type='text'
+  </div>
+    <button type='submit' class='btn btn-success'>Submit</button>
+</form>

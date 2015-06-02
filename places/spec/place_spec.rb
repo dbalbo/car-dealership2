@@ -7,10 +7,10 @@ describe(Place) do
     Place.clear
   end
 
-describe('#place') do
+describe('#description') do
   it('tells the name of a place Ive been') do
     test_city= Place.new('Seattle')
-    expect(test_city.place).to(eq('Seattle'))
+    expect(test_city.description).to(eq('Seattle'))
   end
 end
 describe('.all') do
